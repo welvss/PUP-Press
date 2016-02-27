@@ -1,0 +1,113 @@
+@import "partials/variables";
+
+.body{
+	margin: 100px 25px 0 25px;
+	font-family: $heading;
+}
+#body-wrapper{
+	font-family:$heading;
+}
+p{
+	color: $p-gray;
+}
+a{
+	&:hover{
+		text-decoration: underline;
+	}
+}
+#sign-in{
+	border-right: 2px solid $pup-darkgold;
+}
+#sign-in-page{
+	a{
+		color: $pup-darkgold2;
+	}
+
+}
+.push{
+	padding: 45px;
+}
+#announcement{
+	
+	li{
+		margin-top: 10px;
+	}
+	a{
+		color: $p-gray;
+	}
+	h1>a{
+		color: $pup-maroon;
+	}
+
+}
+#register-page{
+	button{
+		margin: 45px 0 45px 0;
+	}
+	margin-left: 45px;
+
+}
+#edit-account{
+	button{
+		margin: 15px 0 15px 0;
+	}
+}
+.body{
+		a{
+			color: $pup-darkgold2;
+		}
+	
+}
+#exampleHelpText{
+	color: $footer-darkgray;
+	opacity: 0.7;
+}
+//
+@mixin btn($background, $pup-darkgold) {
+  border: 3px solid rgba(255,255,255,0); // You'll want to customize this
+  color: $pup-darkgold;
+  background: $background;
+  &:hover, &:focus, &:active {
+    color: $background;
+    background: $pup-darkgold;
+    border-color: $background;
+  }
+}
+
+.btn {
+  padding: 1em;
+  line-height: 1em;
+  display: inline-block;
+  letter-spacing: 0.1em;
+  transition: border-color 0.2s ease-in-out, background 0.2s ease-in-out, color 0.2s ease-in-out;
+  &.-yellow {
+    @include btn($pup-darkgold, #fff);
+  }
+}
+//
+label{
+	font-size: 1.2em;
+}
+.help-text{
+	font-size: 1em;
+}
+.selector{
+	margin-bottom: 15px;
+	position: relative;
+	right: 215px;
+}
+.text-area{
+	margin-bottom: 15px;
+}
+.form-error{
+	font-size: .9em;
+}
+
+
+button.radius, .button.radius {
+    border-radius: 3px; }
+  button.round, .button.round {
+    border-radius: 1000px; }
+ label{
+ 	color: $p-gray;
+ }
