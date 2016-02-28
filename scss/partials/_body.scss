@@ -24,8 +24,87 @@ a{
 	}
 
 }
+.myAccount{
+	.body{
+		font-family: $heading;
+	}
+	#accountBox{
+		height: 400px;
+		border-right: 2px solid $pup-maroon2;
+
+		text-align: center;
+		
+	}
+	#panel{
+		background: red;
+	}
+	img{
+			height: 200px;
+			position: relative;
+			bottom: 25px;
+		}
+	.clip-circle {
+		
+	  clip-path: circle(80px at 50% 52%);
+	}
+	#account-settings{
+		text-align: initial;
+		list-style-type: circle;
+		a{
+			color: $footer-gray;
+		}
+		li{
+			margin: 0px 0 5px 20px;
+		}
+	}
+	#welcome{
+		margin-top: 20px
+	}
+	.right-col{
+		h1{
+			border-bottom: 2.5px solid $footer-gray;
+		}
+		ul{
+			margin: initial;
+		}
+		.user_panel{
+			height: 85px;
+			
+			h6{
+				padding: 10px 0 0 20px;
+				color: $footer-gray;
+			}
+			p{
+				position: relative;
+				bottom: 10px;
+				left: 20px;
+				color: $footer-gray;
+			}
+		}
+		li{
+			margin-bottom: 5px;
+		}
+		li:nth-child(2n+1)
+			{
+				a{
+					color: $pup-maroon2;
+				}
+		}
+
+		}
+}
+
+.dashboard{
+	height:450px;
+	overflow: auto;
+	overflow-x: hidden;
+	
+}
 .push{
 	padding: 45px;
+}
+.push-15{
+	padding: 15px;
 }
 #announcement{
 	
@@ -48,6 +127,7 @@ a{
 
 }
 #edit-account{
+	margin-left: 45px;
 	button{
 		margin: 15px 0 15px 0;
 	}
