@@ -43,8 +43,8 @@ class Dashboard extends MX_Controller
                                );
        
                         if($this->mdldashboard->modify($user))
-                        redirect('index.php/Dashboard');
-                        redirect('index.php/Dashboard');
+                        redirect('Dashboard');
+                        redirect('Dashboard');
                     }
                
                    
@@ -73,13 +73,13 @@ class Dashboard extends MX_Controller
         $is_logged_in = $this->session->userdata('is_logged_in');
         if(!isset($is_logged_in) || $is_logged_in != true)
         {
-            redirect('index.php/Home/Signin');
+            redirect('Home/Signin');
         }
     }
     public function logout()
     {
         $this->session->sess_destroy();
-        redirect('index.php/Home/Signin');
+        redirect('Home/Signin');
     } 
     public function edit()
     { 
@@ -196,7 +196,7 @@ class Dashboard extends MX_Controller
         
                         );
                         if($this->mdldashboard->change_pass($data))
-                        redirect('index.php/Dashboard');
+                        redirect('Dashboard');
                 }
                  else
             $this->load->view('Edit-pass');

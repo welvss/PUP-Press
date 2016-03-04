@@ -7,9 +7,9 @@
           <div class="small-12">
             
           <h1>Register with Polytechnic University of the Philippines Journals</h1>
-          <p>If you are already registerd with Polytechnic Unviersity Journals, <a href="<?php echo base_url('index.php/Home/Signin')?>">please log in here</a>.</p>
+          <p>If you are already registerd with Polytechnic Unviersity Journals, <a href="<?php echo base_url('Home/Signin')?>">please log in here</a>.</p>
           <p>Reguired information is marked in bold.</p>
-          <?php echo form_open('index.php/Home/register_validation');?>
+          <?php echo form_open('Home/register_validation');?>
           <label>
               <strong> <?php echo validation_errors(); ?></strong>
              

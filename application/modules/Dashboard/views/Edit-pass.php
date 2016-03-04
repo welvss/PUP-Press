@@ -7,7 +7,7 @@
             
           <h1>Change Pasword</h1>
           <p>Reguired information is marked in bold.</p>
-          <?php echo form_open('index.php/Dashboard/changepass');?>
+          <?php echo form_open('Dashboard/changepass');?>
           <label>
               <strong> <?php echo validation_errors(); ?></strong>
              

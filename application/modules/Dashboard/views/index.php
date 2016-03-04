@@ -11,7 +11,7 @@
               <p>Welcome, <span><strong><?php echo $title." ".$firstname." ". $lastname?></strong></span>!</p>
               <ul id="account-settings">
                 <p><strong>Account</strong></p>
-                <li><a href="Edit_Account.html">Manage Account Details</a></li>
+                <li><a href="<?php echo base_url("Dashboard/edit")?>">Manage Account Details</a></li>
                 <li><a href="#">My Journal</a></li>
                 <li><a href="#">Subscription</a></li>
                 <li><a href="Dashboard/Logout">Logout</a></li>

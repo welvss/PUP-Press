@@ -8,7 +8,7 @@
           <h1>Edit Account Details</h1>
           <strong><p>Required information is marked in *.</p></strong>
           <!--Form-->
-           <?php echo form_open('index.php/Dashboard/edit');?>
+           <?php echo form_open('Dashboard/edit');?>
           <label>
               <strong> <?php echo validation_errors(); ?></strong>
              

@@ -1,8 +1,8 @@
 <?php $this->load->view('template/header') ?>
  <nav id="directory">
       <ul class="breadcrumbs">
-         <li><a href="<?php base_url('index.php/Home');?>">Home</a></li>
-         <li class="active"><a href="<?php base_url('index.php/Home/Signin');?>">My Account</a></li>
+         <li><a href="<?php echo base_url('Home');?>">Home</a></li>
+         <li class="active"><a href="<?php echo base_url('Home/Signin');?>">My Account</a></li>
       </ul>
       <hr>
     </nav>
@@ -40,7 +40,7 @@
           <div id="sign-in" class="small-6 columns">
                <h1>Existing Users</h1>
                <p>If you are already registered with Polytechnic University of the <br>Philippines Journals, please enter your username and password below.</p>
-               <?php echo form_open('index.php/Home/login_validation');?>
+               <?php echo form_open('Home/login_validation');?>
                  <div class="row">
                    <div class="small-10 columns">
                      <label>
@@ -78,7 +78,7 @@
             <div id="register" class="small-6 columns">
              <h1>New User</h1>
              <p>New to Polytechnic University of the Philippines | Journal? Registration is free and only takes a minute. Once registered you will gain access to a range of additional services from Journal including free sample issues, flexible email alerts and the option to save your favourite articles and searches.</p>
-             <a href="<?php echo base_url('index.php/Home/Register')?>">Click here to register as a new user with P.U.P Journal.</a>
+             <a href="<?php echo base_url('Home/Register')?>">Click here to register as a new user with P.U.P Journal.</a>
            </div>
 
         </div>

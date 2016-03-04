@@ -15,7 +15,7 @@
      <header  id="header">
       <!--MainHeader-->
        <div class="inner">
-        <h1><a href="<?php echo base_url('index.php/Home'); ?>">Polytechnic University of the Philippines</a></h1>
+        <h1><a href="<?php echo base_url('Home'); ?>">Polytechnic University of the Philippines</a></h1>
             <p class="sub-brand">| J O U R N A L</p>
         </div>
         <!--Right Navigation-->
@@ -28,7 +28,7 @@
           </ul>
          <div id="login-nav">
             <ul class="ulnav breadcrumbs">
-              <li><a href="<?php echo base_url('index.php/Home/Signin'); ?>">Sign In / Register</a></li>
+              <li><a href="<?php echo base_url('Home/Signin'); ?>">Sign In / Register</a></li>
             </ul>
           </div>
         </div>

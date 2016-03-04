@@ -13,7 +13,7 @@ class Home extends MX_Controller {
         $is_logged_in = $this->session->userdata('is_logged_in');
         if(isset($is_logged_in) || $is_logged_in == true)
         {
-            redirect('index.php/Dashboard');
+            redirect('Dashboard');
         }
     }
 	public function index() 	{
@@ -54,7 +54,7 @@ class Home extends MX_Controller {
                     );
                     
                 $this->session->set_userdata($data);
-                redirect('index.php/Dashboard');
+                redirect('Dashboard');
              
                 
             
@@ -142,7 +142,7 @@ class Home extends MX_Controller {
                     'ContactNumber' => $_POST['ContactNumber']
                      );
                     if($this->mdlusers->Register($user))
-                        redirect('index.php/Home/Signin');
+                        redirect('Home/Signin');
             }
             else
             {
