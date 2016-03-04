@@ -1,5 +1,14 @@
 <?php $this->load->view('template/dashboardheader'); ?>
-
+  <nav id="directory">
+      <ul class="breadcrumbs">
+         <li><a href="index.html">PUP Journals</a></li>
+         <li class="active"><a href="<?php echo base_url("Dashboard")?>">My Account</a></li>
+      </ul>
+      <hr>
+    </nav>
+   
+  </header>
+  </div>
 
 <div id="body-wrapper">
     <div class="push-15"></div>
