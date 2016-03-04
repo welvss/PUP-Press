@@ -1,5 +1,17 @@
  <?php $this->load->view('template/header') ?>
 
+ <nav id="directory">
+      <ul class="breadcrumbs">
+         <li><a href="<?php echo base_url('Home')?>">Home</a></li>
+         <li><a href="<?php echo base_url('Home/Signin')?>">My Account</a></li>
+         <li class="active"><a href="register.html">Register</a></li>
+      </ul>
+      <hr>
+    </nav>
+   
+  </header>
+  </div>
+
 
  <div id="body-wrapper">
       <div class="body" id="register-page">

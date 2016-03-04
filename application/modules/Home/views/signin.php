@@ -7,6 +7,9 @@
       <hr>
     </nav>
 
+    </header>
+  </div>
+
 <?php
         #SETTINGS
 

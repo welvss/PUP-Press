@@ -1,4 +1,8 @@
 <?php $this->load->view('template/header.php') ?>
+
+
+  </header>
+  </div>
     <!--Main Body-->
     <div id="body-wrapper">
     <!--Carousel/Picture Slider-->
