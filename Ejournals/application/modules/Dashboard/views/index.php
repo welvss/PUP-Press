@@ -8,7 +8,7 @@
           <div class="small-4 columns">
             <div id="accountBox">
               <img src="<?php echo base_url('assets/img/welvin.png');?>" alt="" class="clip-circle">
-              <p>Welcome, <span><strong><?php echo $username ?></strong></span>!</p>
+              <p>Welcome, <span><strong><?php echo $title." ".$firstname." ". $lastname?></strong></span>!</p>
               <ul id="account-settings">
                 <p><strong>Account</strong></p>
                 <li><a href="Edit_Account.html">Manage Account Details</a></li>
@@ -28,44 +28,126 @@
               <h1><strong>Role's Dashboard</strong></h1>
                 <div class="dashboard">
                  <ul>
-                  <li class="user_panel">
-                    <h6><a href="#"><strong>Journals</strong></a></h6>
+                 <?php 
+                  if($ps_id ==5 || $ps_id == 3 || $ps_id ==4)
+                  echo 
+                    '<li class="user_panel">
+                     <h6><a href="#"><strong>Journals</strong></a></h6>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                   </li>';
+                  
+                 ?>
+                <?php 
+                 if($ps_id ==3)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Manage Articles</strong></a></h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>
-
-                  <li class="user_panel">
+                  </li>';
+                 
+                ?>
+                <?php
+                  if($ps_id ==5 || $ps_id == 4)
+                  echo 
+                    '<li class="user_panel">
+                     <h6><a href="#"><strong>See pay-per-view Purchases</strong></a></h6>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                   </li>';
+               
+                 ?>
+                <?php 
+                 if($ps_id ==4)
+                 echo 
+                   '<li class="user_panel">
                     <h6><a href="#"><strong>Article Submission</strong></a></h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>
-
-                  <li class="user_panel">
-                    <h6><a href="#"><strong>See pay-per-view Purchases</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>
-                  <li class="user_panel">
-                    <h6><a href="#"><strong>Manage Subscription</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>
-                  <li class="user_panel">
-                    <h6><a href="#"><strong>Manage Journal</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>
-
-                  <li class="user_panel">
+                  </li>';
+                 
+                ?>
+                <?php
+                  
+                  if($ps_id ==5 || $ps_id == 4)
+                  echo 
+                    '<li class="user_panel">
+                     <h6><a href="#"><strong>Manage Subscription</strong></a></h6>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                   </li>';
+                
+                 ?>
+                <?php 
+                 if($ps_id ==5 || $ps_id == 4)
+                 echo 
+                   '<li class="user_panel">
                     <h6><a href="#"><strong>Access free sample issues </strong></a></h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>
-
-                   <li class="user_panel">
-                    <h6><a href="#"><strong>Apply as Author</strong></a></h6>
+                  </li>';
+              
+                ?>
+                <?php
+                  if($ps_id ==5)
+                  echo 
+                    '<li class="user_panel">
+                     <h6><a href="#"><strong>Apply as Author</strong></a></h6>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                   </li>';
+            
+                 ?>
+                
+                <?php 
+                 if($ps_id ==1)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Manage User Accounts</strong></a></h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>
-
-                   <li class="user_panel">
-                    <h6><a href="#"><strong>Site Administrator </strong></a></h6>
+                  </li>';
+              
+                ?>
+                <?php 
+                 if($ps_id ==1)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Make Announcements</strong></a></h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>
-                  
+                  </li>';
+            
+                ?>
+                <?php 
+                 if($ps_id ==1)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Edit Home Page</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+            
+                ?>
+                <?php 
+                 if($ps_id ==1)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Make Events</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+           
+                ?>
+                <?php 
+                 if($ps_id ==2)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Publish Journals</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+           
+                ?>
+                <?php 
+                 if($ps_id ==2)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Edit Journals</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+          
+                ?>
+
                 </div>
               </div>
           </div>

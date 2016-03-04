@@ -29,7 +29,7 @@
          <div id="login-nav">
             <ul class="ulnav breadcrumbs">
                <li><a href="Sign-in.html">View Basket</a></li>
-              <li><a href="#">Logged in as: </a></li>
+              <li><a href="#">Logged in as: <?php echo $this->mdldashboard->user_name();?></a></li>
             </ul>
           </div>
         </div>
@@ -46,17 +46,17 @@
     </nav>
     <nav id="nav2">
         <ul class="nav">
-            <li><span>Welvin Medina</span></li>
-            <li><a href="ChangePass.html">Change Password</a></li>
-            <li><a href="Dashboard/Edit">View/Change User Information</a></li>
-            <li><a href="Dashboard/Logout">Sign Out</a></li>
+            <li><span><?php echo $this->mdldashboard->user_firstname()." ".$this->mdldashboard->user_lastname();?></span></li>
+            <li><a href="<?php echo base_url("index.php/Dashboard/ChangePass")?>">Change Password</a></li>
+            <li><a href="<?php echo base_url("index.php/Dashboard/edit")?>">View/Change User Information</a></li>
+            <li><a href="<?php echo base_url("index.php/Dashboard/Logout")?>">Sign Out</a></li>
           </ul>
     </nav>
   
     <nav id="directory">
       <ul class="breadcrumbs">
          <li><a href="index.html">PUP Journals</a></li>
-         <li class="active"><a href="Dashboard">My Account</a></li>
+         <li class="active"><a href="<?php echo base_url("index.php/Dashboard")?>">My Account</a></li>
       </ul>
       <hr>
     </nav>

@@ -7,13 +7,18 @@
           <div class="small-12">
             
           <h1>Register with Polytechnic University of the Philippines Journals</h1>
-          <p>If you are already registerd with Polytechnic Unviersity Journals, <a href="Sign-in.html">please log in here</a>.</p>
+          <p>If you are already registerd with Polytechnic Unviersity Journals, <a href="<?php echo base_url('index.php/Home/Signin')?>">please log in here</a>.</p>
           <p>Reguired information is marked in bold.</p>
+          <?php echo form_open('index.php/Home/register_validation');?>
+          <label>
+              <strong> <?php echo validation_errors(); ?></strong>
+             
+          </label>
           <!--Form-->
           <div class="row">
             <div class="small-8 columns">
               
-                <?php echo form_open('index.php/Home/Register');?>
+                
                 <!--Error Validator-->
                   <div data-abide-error class="alert callout" style="display: none;" data-abide-error>
                     <p><i class="fa fa-exclamation-triangle fa-lg"></i> Please fill up missing required fields!</p>
@@ -32,9 +37,10 @@
                              'id'    => 'username',
                              'class' => 'form-control',
                              'placeholder' => 'Username',
-                             'maxlength' => "30" 
+                             'maxlength' => "30",
+                             'required' => true
                           );
-                      echo "".form_input($data);
+                      echo form_input($data);
                   ?>
                      <span class="form-error">
                       Invalid entry for username
@@ -55,9 +61,10 @@
                       'id'    => 'password',
                       'class' => 'form-control',
                       'placeholder' => 'Password',
-                      'maxlength' => "30" 
+                      'minlength' => "6",
+                      'required' => true
                     );
-                    echo "".form_input($data);
+                    echo form_input($data);
     
                     ?>
                     <span class="form-error">
@@ -72,7 +79,7 @@
                     <label for="right-label" class="float-left"><strong>Confirm Password</strong></label>
                   </div>
                   <div class="small-8 columns">
-                    <input type="password" id="rig-label" placeholder="Confirm Password">
+                    <input type="password" id="passconf" name="passconf" placeholder="Confirm Password">
                      <span class="form-error">
                       passwords do not match
                     </span>
@@ -86,17 +93,19 @@
                     <label for="right-label">Title</label>
                   </div>
                   <div class="small-4 columns">
-                    <select class="selector">
+                    <select class="selector" id='Title' name='Title' required ='TRUE'>
                     <option value="" disabled selected> - Please Select -</option>
-                      <option value="Dr.">Dr</option>
-                      <option value="Professor">Professor</option>
-                      <option value="Miss">Miss</option>
-                      <option value="Mr.">Mr</option>
-                      <option value="Mrs.">Mrs</option>
-                      <option value="Ms.">Ms</option>
-                      <option value="Reverend">Reverend</option>
+                     <option value="Dr.">Dr.</option>
+                      <option value="Prof.">Prof.</option>
+                      <option value="Mr.">Mr.</option>
+                      <option value="Mrs.">Mrs.</option>
+                      <option value="Ms.">Ms.</option>
+                      <option value="Rev.">Rev.</option>
                       <option value="Sir">Sir</option>
                     </select>
+                    <span class="form-error">
+                      Invalid entry for Title
+                    </span>
                   </div>
                 </div>
 
@@ -112,7 +121,7 @@
                       'id'    => 'FirstName',
                      'class' => 'form-control',
                      'placeholder' => 'First Name',
-                     'maxlength' => "30" 
+                     'required' => true
                  );
                   echo "".form_input($data);
     
@@ -135,7 +144,8 @@
                     'id'    => 'MiddleName',
                     'class' => 'form-control',
                     'placeholder' => 'Middle Name',
-                    'maxlength' => "30" 
+            
+                    'required' => true
                     );
                     echo "".form_input($data);
                   ?>
@@ -154,6 +164,7 @@
                                   'id'    => 'LastName',
                                   
                                 'placeholder' => 'Last Name',
+                                'required' => true
                                   
                             );
                         echo "".form_input($data);
@@ -176,6 +187,7 @@
                       'name'  => 'Affiliation',
                       'id'    => 'Affiliation',
                       'placeholder' => 'Affiliation', 
+                      'required' => TRUE
                       );
                       echo "".form_input($data);
       
@@ -196,9 +208,10 @@
                         'id'    => 'Email',
                      
                         'placeholder' => 'Email',
-                         'maxlength' => "30" 
+                        'required' => true
+                 
                          );
-                    echo "".form_input($data);
+                    echo form_input($data);
     
                     ?>
                     <span class="form-error">
@@ -225,15 +238,6 @@
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="small-4 columns">
-                    <label for="right-label" class="float-left">Mailing Address 2</label>
-                  </div>
-                  <div class="small-8 columns">
-                    <input type="text" id="rig-label" placeholder="Mailing Address 2" `data-abide-ignore`>
-                  </div>
-                </div>
-
 
                 <div class="row">
                   <div class="small-4 columns">
@@ -251,7 +255,7 @@
       
                    ?>
                 </div>
-                  
+              </div>
                 <div class="row">
                   <div class="small-4 columns">
                     <label for="right-label" class="float-left">Contact Number</label>
@@ -262,7 +266,7 @@
                       'type'  => 'text',
                       'name'  => 'ContactNumber',
                       'id'    => 'ContactNumber',
-                      'placeholder' => 'Contact Number', 
+                      'placeholder' => 'Contact Number'
                       );
                       echo "".form_input($data);
       
@@ -280,7 +284,7 @@
                       'type'  => 'text',
                       'name'  => 'Fax',
                       'id'    => 'Fax',
-                      'placeholder' => 'Fax', 
+                      'placeholder' => 'Fax' 
                       );
                       echo "".form_input($data);
       
@@ -290,12 +294,24 @@
 
                 
                    <h1>Privacy Statement</h1>
-                   <label for="checkbox1"> <input id="checkbox1" type="checkbox">I agree to the Polytechnic Unviersity of the Philippines Journals <a href="#"> Terms of Service</a> and <a href="#">Privacy Policy</a>. </label>
+                   <label for="checkbox"> 
+                    <?php
+                      $data = array(
+                      'type'  => 'checkbox',
+                      'name'  => 'checkbox',
+                      'id'    => 'checkbox',
+                      'required' => TRUE,
+                      'value'=> TRUE
+                     
+                      );
+                      echo "".form_input($data);
+      
+                   ?>I agree to the Polytechnic Unviersity of the Philippines Journals <a href="#"> Terms of Service</a> and <a href="#">Privacy Policy</a>. </label>
                     <!--Submit Buttom-->
                   
                     <?php echo form_submit('submit','Register with PUP PRESS','class="btn -yellow"');?>
                         
-               <?php echo form_close();?>
+               
                <br>
                <br>
                <br>
@@ -303,7 +319,7 @@
             </div>
           </div>
           <!--End of From-->
-        
+        <?php echo form_close();?>
           </div>
         </div>
     </div>

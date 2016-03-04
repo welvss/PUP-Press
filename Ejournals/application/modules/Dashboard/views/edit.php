@@ -6,11 +6,16 @@
           <div class="small-12">
             
           <h1>Edit Account Details</h1>
-          <p>Reguired information is marked in bold.</p>
+          <strong><p>Required information is marked in *.</p></strong>
           <!--Form-->
+           <?php echo form_open('index.php/Dashboard/edit');?>
+          <label>
+              <strong> <?php echo validation_errors(); ?></strong>
+             
+          </label>
           <div class="row">
             <div class="small-8 columns">
-              <?php echo form_open('index.php/Dashboard/edit');?>
+             
        
                 <!--Error Validator-->
                   <div data-abide-error class="alert callout" style="display: none;" data-abide-error>
@@ -18,7 +23,7 @@
                   </div>
                   <div class="row">
                   <div class="small-4 columns">
-                    <label for="right-label" class="float-left"><strong>Username</strong></label>
+                    <label for="right-label" class="float-left">Username*</label>
                   </div>
                   <div class="small-8 columns">
                    <?php
@@ -27,13 +32,15 @@
                                     'name'  => 'username',
                                     'id'    => 'username',
                                     'class' => 'username',
+                                    'value' => $username,
+
                                     'placeholder' => 'Username'
                                     
                                     
                                     
                                   );
-                              echo form_hidden('users_id');
-                              echo "".form_input($data);
+                             
+                              echo form_input($data);
                     ?>
                     <span class="form-error">
                       Invalid entry for first name
@@ -44,18 +51,17 @@
 
                    <div class="row">
                   <div class="small-4 columns">
-                    <label for="right-label">Title</label>
+                    <label for="right-label" >Title*</label>
                   </div>
                   <div class="small-4 columns">
-                    <select class="selector">
-                    <option value="" disabled selected> Mr.</option>
-                      <option value="Dr.">Dr</option>
-                      <option value="Professor">Professor</option>
-                      <option value="Miss">Miss</option>
-                      <option value="Mr.">Mr</option>
-                      <option value="Mrs.">Mrs</option>
-                      <option value="Ms.">Ms</option>
-                      <option value="Reverend">Reverend</option>
+                    <select class="selector" id='Title' name='Title' required ='TRUE'>
+                    <option value="<?php echo $title; ?>" disabled selected><?php echo $title; ?></option>
+                      <option value="Dr.">Dr.</option>
+                      <option value="Prof.">Prof.</option>
+                      <option value="Mr.">Mr.</option>
+                      <option value="Mrs.">Mrs.</option>
+                      <option value="Ms.">Ms.</option>
+                      <option value="Rev.">Rev.</option>
                       <option value="Sir">Sir</option>
                     </select>
                   </div>
@@ -65,7 +71,7 @@
 
                  <div class="row">
                   <div class="small-4 columns">
-                    <label for="right-label" class="float-left"><strong>First Name</strong></label>
+                    <label for="right-label" class="float-left">First Name*</label>
                   </div>
                   <div class="small-8 columns">
                    <?php
@@ -75,9 +81,10 @@
                       'id'    => 'FirstName',
                      'class' => 'form-control',
                      'placeholder' => 'First Name',
+                     'value' => $firstname,
                      'maxlength' => "30" 
                  );
-                  echo "".form_input($data);
+                  echo form_input($data);
     
                  ?>
                     <span class="form-error">
@@ -88,7 +95,7 @@
 
                  <div class="row">
                   <div class="small-4 columns">
-                    <label for="right-label" class="float-left">Middle Name</label>
+                    <label for="right-label" class="float-left">Middle Name*</label>
                   </div>
                   <div class="small-8 columns">
                     <?php
@@ -98,16 +105,17 @@
                     'id'    => 'MiddleName',
                     'class' => 'form-control',
                     'placeholder' => 'Middle Name',
+                    'value' => $middlename,
                     'maxlength' => "30" 
                     );
-                    echo "".form_input($data);
+                    echo form_input($data);
                   ?>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="small-4 columns">
-                    <label for="right-label" class="float-left"><strong>Last Name</strong></label>
+                    <label for="right-label" class="float-left">Last Name*</label>
                   </div>
                   <div class="small-8 columns">
                     <?php
@@ -115,11 +123,11 @@
                                   'type'  => 'text',
                                   'name'  => 'LastName',
                                   'id'    => 'LastName',
-                                  
+                                  'value' => $lastname,
                                 'placeholder' => 'Last Name',
                                   
                             );
-                        echo "".form_input($data);
+                        echo form_input($data);
     
                      ?>
                     <span class="form-error">
@@ -130,7 +138,7 @@
 
                  <div class="row">
                   <div class="small-4 columns">
-                    <label for="right-label" class="float-left">Affliation</label>
+                    <label for="right-label" class="float-left">Affliation*</label>
                   </div>
                   <div class="small-8 columns">
                    <?php
@@ -138,9 +146,10 @@
                       'type'  => 'text',
                       'name'  => 'Affiliation',
                       'id'    => 'Affiliation',
+                      'value' => $affiliation,
                       'placeholder' => 'Affiliation', 
                       );
-                      echo "".form_input($data);
+                      echo form_input($data);
       
                    ?>
                   </div>
@@ -149,7 +158,7 @@
 
                  <div class="row">
                   <div class="small-4 columns">
-                    <label for="right-label" class="float-left"><strong>Email</strong></label>
+                    <label for="right-label" class="float-left">Email*</label>
                   </div>
                   <div class="small-8 columns">
                    <?php
@@ -157,11 +166,11 @@
                        'type'  => 'Email',
                         'name'  => 'Email',
                         'id'    => 'Email',
-                     
+                        'value' => $email,
                         'placeholder' => 'Email',
                          'maxlength' => "30" 
                          );
-                    echo "".form_input($data);
+                    echo form_input($data);
     
                     ?>
                     <span class="form-error">
@@ -180,20 +189,12 @@
                       'type'  => 'text',
                       'name'  => 'MailingAddress',
                       'id'    => 'MailingAddress',
-                      'placeholder' => 'MailingAddress', 
+                      'value' => $mail,
+                      'placeholder' => 'MailingAddress'
                       );
-                      echo "".form_input($data);
+                      echo form_input($data);
       
                    ?>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="small-4 columns">
-                    <label for="right-label" class="float-left">Mailing Address 2</label>
-                  </div>
-                  <div class="small-8 columns">
-                    <input type="text" id="rig-label" placeholder="Mailing Address 2" `data-abide-ignore` value="">
                   </div>
                 </div>
 
@@ -208,9 +209,10 @@
                       'type'  => 'text',
                       'name'  => 'City',
                       'id'    => 'City',
+                      'value' => $city,
                       'placeholder' => 'City', 
                       );
-                      echo "".form_input($data);
+                      echo form_input($data);
       
                    ?>
                   </div>
@@ -226,9 +228,10 @@
                       'type'  => 'text',
                       'name'  => 'ContactNumber',
                       'id'    => 'ContactNumber',
+                      'value' => $contact,
                       'placeholder' => 'Contact Number', 
                       );
-                      echo "".form_input($data);
+                      echo form_input($data);
       
                    ?>
                   </div>
@@ -244,9 +247,10 @@
                       'type'  => 'text',
                       'name'  => 'Fax',
                       'id'    => 'Fax',
+                      'value' => $fax,
                       'placeholder' => 'Fax', 
                       );
-                      echo "".form_input($data);
+                      echo form_input($data);
       
                    ?>
                   </div>
@@ -271,7 +275,7 @@
                     <div class="row">
                       <div class="small-8 columns">
                       
-                        <?php echo form_submit('submit', 'Submit','class="btn -yellow"'); ?>
+                        <?php echo form_submit('submit', 'Save','class="btn -yellow"'); ?>
                       </div>
                     </div>                
                 <?php form_close();?>

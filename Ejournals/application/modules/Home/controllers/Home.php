@@ -48,6 +48,7 @@ class Home extends MX_Controller {
                     
                     'username' =>$this->input->post('username'),
                     'users_id' =>$this->mdlusers->check_id(),
+                    'ps_id' =>$this->mdlusers->checK_privilege(),
                     'is_logged_in'=> true
                     
                     );
@@ -59,7 +60,9 @@ class Home extends MX_Controller {
             
                 
                                
-            }else{
+            }
+            else
+            {
                 
                 $this->load->view('signin');
             }
@@ -111,27 +114,41 @@ class Home extends MX_Controller {
             }
         }*/
         
-    public function register()
-    {
-        $this->load->model('mdlusers');
+    public function register_validation()
+    {   
+        $this->load->library('form_validation');
+        $this->load->model('mdlusers'); 
+        $this->form_validation->set_rules('username','Username','required|callback_check_if_username_exists');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|matches[passconf]');
+        $this->form_validation->set_rules('passconf', 'Password Confirmation', 'required');
+        $this->form_validation->set_rules('Email','Email','required|callback_check_if_email_exists');
+        $this->form_validation->set_rules('checkbox','Agreement', 'required');
         if($this->input->post('submit'))
-        {
-            $user = array(
-                        'username'=>$_POST['username'],
-                        'password'=>md5($_POST['password']),
-                        'LastName' => $_POST['LastName'],
-                        'FirstName' => $_POST['FirstName'],
-                        'MiddleName' =>$_POST['MiddleName'],
-                        'Email' => $_POST['Email'],
-                        'MailingAddress' => $_POST['MailingAddress'],
-                        'City' => $_POST['City'],
-                        'Affiliation' => $_POST['Affiliation'],
-                        'Fax' => $_POST['Fax'],
-                        'ContactNumber' => $_POST['ContactNumber']
-                         );
+        { 
+            if($this->form_validation->run($this))
+            {
+                    $user = array(
+                    'username'=>$_POST['username'],
+                    'password'=>md5($_POST['password']),
+                    'Title' => $_POST['Title'],
+                    'LastName' => $_POST['LastName'],
+                    'FirstName' => $_POST['FirstName'],
+                    'MiddleName' =>$_POST['MiddleName'],
+                    'Email' => $_POST['Email'],
+                    'MailingAddress' => $_POST['MailingAddress'],
+                    'City' => $_POST['City'],
+                    'Affiliation' => $_POST['Affiliation'],
+                    'Fax' => $_POST['Fax'],
+                    'ContactNumber' => $_POST['ContactNumber']
+                     );
+                    if($this->mdlusers->Register($user))
+                        redirect('index.php/Home/Signin');
+            }
+            else
+            {
+                $this->load->view('register');
+            }
             
-            if($this->mdlusers->Register($user))
-                redirect('index.php/Home/Signin');
         }
         else
         {
@@ -141,10 +158,14 @@ class Home extends MX_Controller {
     }
 
 
+    public function register()
+    {
+        $this->load->view('register');
+    }
 
-        public function check_if_username_exists($requested_username)
-        {
-            $this->load->model('tbl_users');
+    public function check_if_username_exists($requested_username)
+    {
+            $this->load->model('mdlusers');
             $username_available = $this -> mdlusers ->check_if_username_exists($requested_username);
             if($username_available)
             {
@@ -152,13 +173,14 @@ class Home extends MX_Controller {
             }
             else
             {
+                
                  return FALSE;
             }
 
-        }
-         public function check_if_email_exists($requested_email)
-        {
-            $this->load->model('tbl_users');
+    }
+    public function check_if_email_exists($requested_email)
+    {
+            $this->load->model('mdlusers');
             $email_available = $this -> mdlusers ->check_if_email_exists($requested_email);
             if($email_available)
             {
@@ -166,13 +188,25 @@ class Home extends MX_Controller {
             }
             else
             {
+        
                  return FALSE;
             }
 
-        }
+    }
 
 
-
+     public function check_if_accept_terms() 
+    {
+            if ($this->input->post('checkbox'))
+            { 
+                return TRUE;
+            }
+            else
+            {
+                   
+                return FALSE;
+            }
+    }
 
 }
 ?>
