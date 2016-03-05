@@ -5343,14 +5343,14 @@ table {
   table thead,
   table tbody,
   table tfoot {
-    border: 1px solid #f1f1f1;
+    border: 1px solid #fbfbfb;
     background-color: #fefefe; }
   table caption {
     font-weight: bold;
     padding: 0.5rem 0.625rem 0.625rem; }
   table thead,
   table tfoot {
-    background: #f8f8f8;
+    background: #fdfdfd;
     color: #0a0a0a; }
     table thead tr,
     table tfoot tr {
@@ -5363,7 +5363,7 @@ table {
       font-weight: bold;
       text-align: left; }
   table tbody tr:nth-child(even) {
-    background-color: #f1f1f1; }
+    background-color: #fbfbfb; }
   table tbody th,
   table tbody td {
     padding: 0.5rem 0.625rem 0.625rem; }
@@ -5386,10 +5386,10 @@ table.scroll {
   overflow-x: auto; }
 
 table.hover tr:hover {
-  background-color: #f9f9f9; }
+  background-color: #f1f1f1; }
 
 table.hover tr:nth-of-type(even):hover {
-  background-color: #ececec; }
+  background-color: #efefef; }
 
 .tabs {
   margin: 0;
@@ -6646,8 +6646,43 @@ a:hover {
 #sign-in-page a {
   color: #A98320; }
 
-.myAccount .body {
+.AtoZ {
   font-family: "Open Sans", sans-serif; }
+  .AtoZ .Journals-AtoZ-list {
+    text-align: center; }
+  .AtoZ .nav-vert {
+    text-align: right; }
+  .AtoZ a {
+    color: black; }
+    .AtoZ a:visited {
+      color: #800000; }
+  .AtoZ h1 {
+    margin: initial;
+    color: #dcaa2a;
+    margin-bottom: 20px;
+    font-family: "Cinzel", serif;
+    font-weight: bold; }
+  .AtoZ .AtoZ_list li {
+    display: inline;
+    margin-right: 5px; }
+  .AtoZ .letter {
+    margin: 20px;
+    font-size: 2em;
+    border-bottom: 1px solid #404040; }
+  .AtoZ .nav-vert {
+    color: initial;
+    font-size: 1.2em; }
+  .AtoZ .left-nav {
+    border-right: 1px solid #404040; }
+  .AtoZ .left-align {
+    text-align: left; }
+
+.myAccount a {
+  color: #A98320; }
+
+.myAccount .body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700; }
 
 .myAccount #accountBox {
   height: 400px;
@@ -6661,6 +6696,20 @@ a:hover {
   height: 200px;
   position: relative;
   bottom: 25px; }
+
+.myAccount .bg {
+  height: 200px;
+  position: relative;
+  bottom: 25px;
+  border-radius: 250px;
+  font-size: 50px;
+  color: #fff;
+  line-height: 100px;
+  text-align: center;
+  background: #952d2d; }
+  .myAccount .bg span {
+    position: relative;
+    top: 55px; }
 
 .myAccount .clip-circle {
   -webkit-clip-path: circle(80px at 50% 52%);
@@ -6700,10 +6749,8 @@ a:hover {
 .myAccount .right-col li:nth-child(2n+1) a {
   color: #952d2d; }
 
-.dashboard {
-  height: 450px;
-  overflow: auto;
-  overflow-x: hidden; }
+.dashboard h1 {
+  margin-left: 20px; }
 
 .push {
   padding: 45px; }
@@ -6729,9 +6776,6 @@ a:hover {
   margin-left: 45px; }
   #edit-account button {
     margin: 15px 0 15px 0; }
-
-.body a {
-  color: #A98320; }
 
 #exampleHelpText {
   color: #1a1919;
@@ -6914,6 +6958,32 @@ html, body {
       .nav > li > a:hover {
         text-decoration: none;
         color: #dcaa2a; }
+
+.Site-admin #nav {
+  background: #1a1919; }
+  .Site-admin #nav a:hover {
+    color: #A98320; }
+
+.Site-admin #nav2 {
+  position: relative;
+  /* right: 2em; */
+  top: 75px;
+  /* padding-left: 93px; */
+  line-height: 1em;
+  width: 100%;
+  min-width: 800px;
+  background: #404040;
+  height: 22.5px;
+  padding-left: 15px; }
+  .Site-admin #nav2 span {
+    color: #dcaa2a;
+    font-size: 1em; }
+  .Site-admin #nav2 .nav a {
+    padding-right: 0 5px;
+    line-height: 25px;
+    margin: 0px 0px;
+    font-weight: 500;
+    font-size: 0.80em; }
 
 .myAccount #nav {
   background: #A98320; }

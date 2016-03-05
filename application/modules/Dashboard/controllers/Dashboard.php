@@ -18,7 +18,8 @@ class Dashboard extends MX_Controller
             'lastname' =>$this->mdldashboard->user_lastname(),
             'firstname' =>$this->mdldashboard->user_firstname(),
             'middlename' =>$this->mdldashboard->user_middlename(),
-            'ps_id' => $this->session->userdata('ps_id')
+            'ps_id' => $this->session->userdata('ps_id'),
+            'img' => $this->mdldashboard->user_img()
          ); 
         
 	    $this->load->view('index',$data);
@@ -83,8 +84,8 @@ class Dashboard extends MX_Controller
     {
         $type = explode('.', $_FILES["img"]["name"]);
         $type = $type[count($type)-1];
-        $url = "./images/".uniqid(rand()).'.'.$type;
-        if (in_array($type, array("jpg","jpeg","gif","png"))) 
+        $url = "/images/".uniqid(rand()).'.'.$type;
+        if (in_array($type, array("jpg","jpeg","gif","png","JPG","JPEG","GIF","PNG"))) 
         {
            if (is_uploaded_file($_FILES["img"]["tmp_name"])) 
            {

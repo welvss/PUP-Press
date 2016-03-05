@@ -223,6 +223,40 @@ html,body{
     }
 
 }
+.Site-admin{
+	#nav{
+		background: $footer-darkgray;
+		a:hover{
+			color: $pup-darkgold2;
+		}
+	}
+	#nav2{
+		 position: relative;
+    /* right: 2em; */
+    top: 75px;
+    /* padding-left: 93px; */
+    line-height: 1em;
+    width: 100%;
+    min-width: 800px;
+    background: $footer-gray;
+    height: 22.5px;
+    padding-left: 15px;
+    span{
+    	color: $pup-darkgold;
+    			font-size: 1em;
+    }
+	    .nav{
+	    	a{
+	    		padding-right: 0 5px;
+	    		line-height: 25px;
+	    		margin: 0px 0px;
+	    		font-weight: 500;
+	    		font-size: 0.80em;
+	    		
+	    	}
+	    }
+	}
+}
 .myAccount{
 	#nav{
 		background: $pup-darkgold2;

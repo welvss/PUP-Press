@@ -24,9 +24,57 @@ a{
 	}
 
 }
+
+.AtoZ{
+	font-family: $heading;
+	.Journals-AtoZ-list{
+		text-align: center;
+	}
+	.nav-vert{
+		text-align: right;
+	}
+	a{
+		color: black;
+		&:visited{
+			color: $pup-maroon;
+		}
+	}
+	h1{
+		margin: initial;
+		color: $pup-darkgold;
+		margin-bottom: 20px;
+		font-family: $title;
+		font-weight: bold;
+	}
+	.AtoZ_list{
+		li{
+			display: inline;
+			margin-right: 5px;
+		}
+	}
+	.letter{
+		margin: 20px;
+		font-size: 2em;
+		border-bottom: 1px solid $footer-gray;
+	}
+	.nav-vert{
+		color: initial;
+		font-size: 1.2em;
+	}
+	.left-nav{
+		border-right: 1px solid $footer-gray;
+	}
+	.left-align{
+		text-align: left;
+	}
+}
 .myAccount{
+	a{
+		color: $pup-darkgold2;
+	}
 	.body{
 		font-family: $heading;
+		font-weight: 700;
 	}
 	#accountBox{
 		height: 400px;
@@ -43,6 +91,21 @@ a{
 			position: relative;
 			bottom: 25px;
 		}
+		.bg{
+		    height:200px;
+		    position: relative;
+					bottom: 25px;
+		    border-radius:250px;
+		    font-size:50px;
+		    color:#fff;
+		    line-height:100px;
+		    text-align:center;
+		    background:$pup-maroon2;
+		    span{
+		    	position: relative;
+		    	top: 55px;
+				}
+    		}
 	.clip-circle {
 		
 	  clip-path: circle(80px at 50% 52%);
@@ -95,10 +158,9 @@ a{
 }
 
 .dashboard{
-	height:450px;
-	overflow: auto;
-	overflow-x: hidden;
-	
+	h1{
+		margin-left: 20px;
+	}
 }
 .push{
 	padding: 45px;
@@ -132,12 +194,7 @@ a{
 		margin: 15px 0 15px 0;
 	}
 }
-.body{
-		a{
-			color: $pup-darkgold2;
-		}
-	
-}
+
 #exampleHelpText{
 	color: $footer-darkgray;
 	opacity: 0.7;
