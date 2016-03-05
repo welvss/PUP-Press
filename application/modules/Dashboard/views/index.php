@@ -16,7 +16,7 @@
         <div class="row">
           <div class="small-4 columns">
             <div id="accountBox">
-              <img src="<?php echo base_url('assets/img/welvin.png');?>" alt="" class="clip-circle">
+              <div class="bg clip-circle" style="background:red;"><span>WM</span></div>
               <p>Welcome, <span><strong><?php echo $title." ".$firstname." ". $lastname?></strong></span>!</p>
               <ul id="account-settings">
                 <p><strong>Account</strong></p>
