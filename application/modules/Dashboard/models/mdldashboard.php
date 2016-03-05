@@ -218,7 +218,9 @@ class MdlDashboard extends CI_Model{
         if(isset($options['ContactNumber']))
             $this->db->set('ContactNumber', $options['ContactNumber']);
         if(isset($options['Fax']))
-        $this->db->set('Fax', $options['Fax']);
+            $this->db->set('Fax', $options['Fax']);
+        if(isset($options['img']))
+            $this->db->set('img', $options['img']);
         $this->db->where('users_id', $this->session->userdata('users_id'));
         $this->db->update('tbl_users');
         

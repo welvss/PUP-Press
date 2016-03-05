@@ -24,9 +24,15 @@ class Dashboard extends MX_Controller
 	    $this->load->view('index',$data);
 		
 	}
+
+ 
     public function update_if()
-    {
-                    {                  
+    {   
+
+                 
+                   
+                    {    
+                                  
                          $user = array(
                                'username'=>$_POST['username'],
                                'Title' => $_POST['Title'],
@@ -38,7 +44,8 @@ class Dashboard extends MX_Controller
                                'City' => $_POST['City'],
                                'Affiliation' => $_POST['Affiliation'],
                                'ContactNumber' => $_POST['ContactNumber'],
-                               'Fax' => $_POST['Fax']
+                               'Fax' => $_POST['Fax'],
+                               'img' => $this->do_upload('img')
                                
                                );
        
@@ -52,7 +59,9 @@ class Dashboard extends MX_Controller
     public function update_else()
     {
         {
+                       
                         $data = array(
+                      
                         'title' =>$this->mdldashboard->user_title(),
                         'lastname' =>$this->mdldashboard->user_lastname(),
                         'firstname' =>$this->mdldashboard->user_firstname(),
@@ -63,10 +72,29 @@ class Dashboard extends MX_Controller
                         'city' =>$this->mdldashboard->user_city(),
                         'affiliation' =>$this->mdldashboard->user_affiliation(),
                          'contact' =>$this->mdldashboard->user_contact(),
-                        'fax' =>$this->mdldashboard->user_fax()
+                        'fax' =>$this->mdldashboard->user_fax(),
+                        
                         );
                         $this->load->view('Edit',$data);
         }
+    }
+
+    public function do_upload()
+    {
+        $type = explode('.', $_FILES["img"]["name"]);
+        $type = $type[count($type)-1];
+        $url = "./images/".uniqid(rand()).'.'.$type;
+        if (in_array($type, array("jpg","jpeg","gif","png"))) 
+        {
+           if (is_uploaded_file($_FILES["img"]["tmp_name"])) 
+           {
+               if (move_uploaded_file($_FILES["img"]["tmp_name"], $url)) 
+               {
+                   return $url;
+               }
+           }
+        }
+        return "";
     }
     function is_logged_in()
     {
@@ -209,8 +237,8 @@ class Dashboard extends MX_Controller
                    
         
     }
-     public function validate_credentials()
-     {
+    public function validate_credentials()
+    {
             
             $this->load->model('mdldashboard');
             
@@ -222,5 +250,7 @@ class Dashboard extends MX_Controller
                 $this->form_validation->set_message('validate_credentials','Incorrect Password!');
                 return false;
             }
-        }
+    }
+
+
 }

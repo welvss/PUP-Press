@@ -19,7 +19,7 @@
           <h1>Edit Account Details</h1>
           <strong><p>Required information is marked in *.</p></strong>
           <!--Form-->
-           <?php echo form_open('Dashboard/edit');?>
+           <?php echo form_open_multipart('Dashboard/edit');?>
           <label>
               <strong> <?php echo validation_errors(); ?></strong>
              
@@ -66,7 +66,7 @@
                   </div>
                   <div class="small-4 columns">
                     <select class="selector" id='Title' name='Title' required ='TRUE'>
-                    <option value="<?php echo $title; ?>" disabled selected><?php echo $title; ?></option>
+                    <option value="<?php echo $title; ?>" ><?php echo $title; ?></option>
                       <option value="Dr.">Dr.</option>
                       <option value="Prof.">Prof.</option>
                       <option value="Mr.">Mr.</option>
@@ -272,7 +272,16 @@
                     <label for="right-label" class="float-left">Profile Picture</label>
                   </div>
                   <div class="small-8 columns">
-                  <button class="file-upload "><input type="file" class="file-input"></button>
+                 
+                    <?php
+                      $data = array(
+                     
+                      'name'  => 'img',
+                      'id'    => 'img'
+                    
+                     
+                      );
+                   echo form_upload($data)?>
                   </div>
                 </div>
 
@@ -286,7 +295,7 @@
                     <div class="row">
                       <div class="small-8 columns">
                       
-                        <?php echo form_submit('submit', 'Save','class="btn -yellow"'); ?>
+                        <?php echo form_submit('submit', 'Save','class="btn -yellow"' , 'upload image'); ?>
                       </div>
                     </div>                
                 <?php form_close();?>
