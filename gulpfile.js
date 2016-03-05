@@ -4,7 +4,8 @@ var $    = require('gulp-load-plugins')();
 var sassPaths = [
   'bower_components/foundation-sites/scss',
   'bower_components/motion-ui/src',
-  'bower_components/font-awesome/scss'
+  'bower_components/font-awesome/scss',
+  'bower_components/datatables.net-zf/css/scss'
 ];
 
 gulp.task('sass', function() {
