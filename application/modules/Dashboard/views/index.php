@@ -16,9 +16,21 @@
         <div class="row">
           <div class="small-4 columns">
             <div id="accountBox">
-              <img src="<?php echo base_url($img);?>" alt="" class="clip-circle">
-             <?php '<div class="bg clip-circle" style="background:red;"><span><?php echo substr($firstname, 0,1)."".substr($lastname, 0,1)?></span></div>' ?>
-              <p>Welcome, <span><strong><?php echo $title." ".$firstname." ". $lastname?></strong></span>!</p>
+                          
+              <?php if($img!="")
+             
+                echo  '<img src="'.base_url($img).'" alt="" class="clip-circle">';
+              ?>
+              <?php 
+                if($img=="")
+                echo '<div class="bg clip-circle" style="background:'.$color.';"><span>'. substr($firstname, 0,1).substr($lastname, 0,1)."".'</span></div>';
+              ?>
+
+
+
+
+              <p>Welcome, <span><strong><?php echo $title." ".$firstname." ". $lastname;?></strong></span>!</p>
+              
               <ul id="account-settings">
                 <p><strong>Account</strong></p>
                 <li><a href="<?php echo base_url("Dashboard/edit")?>">Manage Account Details</a></li>

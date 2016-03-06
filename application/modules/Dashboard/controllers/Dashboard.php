@@ -19,7 +19,8 @@ class Dashboard extends MX_Controller
             'firstname' =>$this->mdldashboard->user_firstname(),
             'middlename' =>$this->mdldashboard->user_middlename(),
             'ps_id' => $this->session->userdata('ps_id'),
-            'img' => $this->mdldashboard->user_img()
+            'img' => $this->mdldashboard->user_img(),
+            'color' => $this->mdldashboard->user_color()
          ); 
         
 	    $this->load->view('index',$data);
@@ -31,10 +32,9 @@ class Dashboard extends MX_Controller
     {   
 
                  
-                   
-                    {    
-                                  
-                         $user = array(
+               
+                    {            
+                        $user = array(
                                'username'=>$_POST['username'],
                                'Title' => $_POST['Title'],
                                'LastName' => $_POST['LastName'],
@@ -48,13 +48,13 @@ class Dashboard extends MX_Controller
                                'Fax' => $_POST['Fax'],
                                'img' => $this->do_upload('img')
                                
-                               );
+                        );
        
                         if($this->mdldashboard->modify($user))
                         redirect('Dashboard');
+                        
                         redirect('Dashboard');
                     }
-               
                    
     }
     public function update_else()
@@ -82,9 +82,11 @@ class Dashboard extends MX_Controller
 
     public function do_upload()
     {
+       
+
         $type = explode('.', $_FILES["img"]["name"]);
         $type = $type[count($type)-1];
-        $url = "/images/".uniqid(rand()).'.'.$type;
+        $url = "./images/".uniqid(rand()).'.'.$type;
         if (in_array($type, array("jpg","jpeg","gif","png","JPG","JPEG","GIF","PNG"))) 
         {
            if (is_uploaded_file($_FILES["img"]["tmp_name"])) 

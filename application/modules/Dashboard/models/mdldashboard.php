@@ -12,6 +12,16 @@ class MdlDashboard extends CI_Model{
         $this->db->where('u.users_id', $this->seesion->userdata('users_id'));
 
     }
+     public function user_color()
+    {
+        $this->db->where('users_id', $this->session->userdata('users_id'));
+        $query = $this->db->get('tbl_users');
+        foreach ($query->result() as $row)
+        {
+            $color = $row->color;
+        }
+        return $color;
+    }
     public function user_img()
     {
         $this->db->where('users_id', $this->session->userdata('users_id'));

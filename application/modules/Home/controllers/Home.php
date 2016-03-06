@@ -125,8 +125,11 @@ class Home extends MX_Controller {
         $this->form_validation->set_rules('checkbox','Agreement', 'required');
         if($this->input->post('submit'))
         { 
+             $rand = array('#952d2d','#A98320','#404040');
+                    
             if($this->form_validation->run($this))
             {
+                   
                     $user = array(
                     'username'=>$_POST['username'],
                     'password'=>md5($_POST['password']),
@@ -139,7 +142,8 @@ class Home extends MX_Controller {
                     'City' => $_POST['City'],
                     'Affiliation' => $_POST['Affiliation'],
                     'Fax' => $_POST['Fax'],
-                    'ContactNumber' => $_POST['ContactNumber']
+                    'ContactNumber' => $_POST['ContactNumber'],
+                    'color' => $rand[rand(1,4)]
                      );
                     if($this->mdlusers->Register($user))
                         redirect('Home/Signin');

@@ -277,8 +277,9 @@
                       $data = array(
                      
                       'name'  => 'img',
-                      'id'    => 'img'
-                    
+                      'id'    => 'img',
+                      'allowedtypes' => 'gif|jpg|png',
+                                       
                      
                       );
                    echo form_upload($data)?>
