@@ -223,6 +223,13 @@ html,body{
     }
 
 }
+.reveal{
+	-webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        -ms-transition: all 0.25s ease-out;
+        -o-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+}
 .Site-admin{
 	#nav{
 		background: $footer-darkgray;
@@ -303,7 +310,8 @@ html,body{
 		
 	}
 	li.active a{
-		color: $pup-darkgold;
+		color: $pup-maroon2;
+		font-weight: bold;
 	}
 	a{
 		position: relative;

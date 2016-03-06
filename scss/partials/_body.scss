@@ -68,6 +68,22 @@ a{
 		text-align: left;
 	}
 }
+.admin-journal{
+	h1{
+		font-family: $title;
+		color: $pup-darkgold;
+	}
+	.select{
+		padding:initial;
+	}
+	.h6-border{
+		border-top: 1px solid $footer-gray;
+			margin-top:30px;
+		font-weight: bold;
+		padding-top: 15px;
+		font-family: $brand;
+	}
+}
 .myAccount{
 	a{
 		color: $pup-darkgold2;
@@ -126,6 +142,8 @@ a{
 	.right-col{
 		h1{
 			border-bottom: 2.5px solid $footer-gray;
+			color: $pup-darkgold;
+			font-family: $title;
 		}
 		ul{
 			margin: initial;
@@ -160,6 +178,9 @@ a{
 .dashboard{
 	h1{
 		margin-left: 20px;
+	}
+	a{
+		color: $pup-darkgold2;
 	}
 }
 .push{
@@ -239,7 +260,83 @@ label{
 .form-error{
 	font-size: .9em;
 }
-
+.journal-title{
+	font-family: $title;
+	font-weight: bold;
+	font-size: 2em;
+}
+.journal-thumb{
+	height: 150px;
+	margin: 10px;
+}
+.panel-title{
+	background: $footer-gray;
+	height: 50px;
+	color: white;
+	h6{
+		position: relative;
+		top: 10px;
+		left: 15px;
+	}
+}
+.panel-content{
+	margin: 20px;
+}
+.panel{
+	border: 1px solid rgba(10, 10, 10, 0.25);
+}
+.journal-menu{
+	background: $footer-gray;
+	a{
+		color: white;
+	}
+	.journal-submenu{
+		background: $secondary;
+		a{
+			color:initial;
+		}
+	}
+}
+.pagination li{
+	font-family: $heading;
+	font-size: 1.3em;
+}
+.pagination .current{
+	background: $pup-darkgold2;
+}
+select{
+	height: 2.5em;
+}
+.steps{
+	border-bottom: 1px dotted $footer-gray;
+}
+#checklist{
+	margin-top:25px;
+	border-bottom: 1px dotted $footer-gray;
+}
+#privacy{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	border-bottom: 1px dotted $footer-gray;
+}
+#guide{
+	margin: 25px 0 25px 0;
+	ul li{
+		margin-left: 25px;
+	}
+}
+.submission-section{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	border-bottom: 1px dotted $footer-gray;
+}
+#label-checkbox2{
+	font-size: 1em;
+	margin-left: 25px;
+	 display: block;
+    padding-left: 20px;
+    text-indent: -20px;
+}
 
 button.radius, .button.radius {
     border-radius: 3px; }

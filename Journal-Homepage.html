@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Administrator | Polytechnic University of the Philippines | Journal</title>
+    <title>Journal | Polytechnic University of the Philippines | Journal</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body class="homepage">
 <div class="wrapper">
 <!--Header-->
-   <div id="header-wrapper" class="Site-admin">
+   <div id="header-wrapper" class="myAccount">
      <header  id="header">
       <!--MainHeader-->
        <div class="inner">
@@ -36,7 +36,7 @@
             <!--Subject Navigation-->
    <nav id="nav">
         <ul class="nav">
-            <li><a href="#">Our Journals</a></li>
+            <li><a href="Journals_AtoZ.html">Our Journals</a></li>
             <li><a href="#">Access & Purchase</a></li>
             <li><a href="#">For Authors</a></li>
             <li><a href="#">For Librarians</a></li>
@@ -56,9 +56,8 @@
     <nav id="directory">
       <ul class="breadcrumbs">
          <li><a href="index.html">PUP Journals</a></li>
-         <li><a href="MyAccount.html">My Account</a></li>
-         <li><a href="Site-Administration.html">Site Administration</a></li>
-         <li class="active"><a href="#">Journals</a></li>
+         <li><a href="#">Travel</a></li>
+         <li class="active"><a href="#">Coron's Treasure</a></li>
       </ul>
       <hr>
     </nav>
@@ -69,48 +68,48 @@
     <!--Main Body-->
     <div id="body-wrapper">
     <div class="push-15"></div>
-      <div class="body myAccount admin-journal">
+      <div class="body Journal-homepage">
         <div class="row">
-          <div class="small-12 columns">
-            <div class="right-col">
-              <h1><strong>Journal</strong></h1>
-                <div class="dashboard">
-                  <table id="table_id"  class="display">
-                    <thead>
-                      <tr>
-                        <th >Journal Title</th>
-                        <th >Path</th>
-                        <th >Action</th>
-                        <th>Category</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                      </tr>
-                      <tr>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                      </tr>
-                      <tr>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                        <td>Content Goes Here</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p><a href="#">Create a Journal</a></p>
-
+          <div class="small-8 columns">
+            <ul class="accordion secondary" data-accordion data-multi-expand="true">
+              <li class="accordion-item is-active" data-accordion-item>
+                <a href="#" class="accordion-title journal-title" style="background: #19b64d; color: white;">Coron's Treasure</a>
+                <ul class="dropdown menu secondary journal-menu" data-dropdown-menu>
+                  <li>
+                  <a href="#">About</a>
+                  <ul class="menu journal-submenu" style="color: black" data-animation-in="fade-in">
+                    <li><a href="#">About the journal</a></li>
+                  </ul>
+                  </li>
+                  <li><a href="#">Submit</a></li>
+                  <li><a href="#">Subscribe</a></li>
+                </ul>
+                <div class="accordion-content" data-tab-content>
+                  <img src="img/ct_thumb.png" alt="Journal's Title" class="journal-thumb">
+                  I would start in the open state, due to using the `is-active` state class.
                 </div>
-              </div>
+              </li>
+      <!-- ... -->
+            </ul>
+            <!--Panel-->
+            <div class="panel">
+            <div class="panel-title"> <h6>About the Journal</h6></div>
+              <p class="panel-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut velit nec purus consequat maximus. Mauris elit justo, tincidunt vel ullamcorper eu, sollicitudin et urna. Donec ut venenatis quam, cursus pharetra elit. Aliquam volutpat fringilla convallis. Suspendisse volutpat nunc vitae aliquet luctus. Nunc id leo semper, ullamcorper ex vitae, mattis elit. Integer vitae felis pretium, varius odio id, sagittis dui. </p>
+              <p class="panel-content">
+                In pellentesque in lectus id feugiat. Nam eu blandit mi, eget scelerisque enim. Curabitur et ultricies purus. Aliquam scelerisque lorem laoreet nulla fermentum, at ultricies justo convallis. Etiam porta eget nulla sed luctus. Sed tincidunt sagittis dui ac pellentesque. In sed risus leo. Phasellus sed euismod massa.
+              </p>
+            </div>
           </div>
-      </div>
+
+          <div class="small-4 columns">
+            <div class="callout">
+                <input type="text" placeholder="Search...">
+            </div>
+            
+          </div>
+
+        </div>
+        <!--End of row-->
     </div>
     <div class="push"></div>
   </div>
@@ -168,8 +167,6 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/what-input.js"></script>
     <script src="bower_components/owlcarousel/owl-carousel/owl.carousel.js"></script>
-    <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="bower_components/datatables.net-zf/js/dataTables.min.js"></script>
     <script src="bower_components/foundation-sites/dist/foundation.js"></script>
     <script src="js/app.js"></script>
   </body>
