@@ -3852,12 +3852,12 @@ kbd {
   padding: 0.85em 1em;
   margin: 0 0 1rem 0;
   font-size: 0.9rem;
-  background-color: #2199e8;
+  background-color: #555555;
   color: #fff; }
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
-    background-color: #1583cc;
+    background-color: #484848;
     color: #fff; }
   .button.tiny {
     font-size: 0.6rem; }
@@ -3981,10 +3981,10 @@ textarea {
   -moz-appearance: none; }
   [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus,
   textarea:focus {
-    border: 1px solid #2199e8;
+    border: 1px solid #A98320;
     background-color: #fefefe;
     outline: none;
-    box-shadow: 0 0 2px #2199e8;
+    box-shadow: 0 0 2px #A98320;
     transition: box-shadow 0.5s, border-color 0.25s ease-in-out; }
 
 textarea {
@@ -6677,6 +6677,20 @@ a:hover {
   .AtoZ .left-align {
     text-align: left; }
 
+.admin-journal h1 {
+  font-family: "Cinzel", serif;
+  color: #dcaa2a; }
+
+.admin-journal .select {
+  padding: initial; }
+
+.admin-journal .h6-border {
+  border-top: 1px solid #404040;
+  margin-top: 30px;
+  font-weight: bold;
+  padding-top: 15px;
+  font-family: "Lusitana", serif; }
+
 .myAccount a {
   color: #A98320; }
 
@@ -6727,7 +6741,9 @@ a:hover {
   margin-top: 20px; }
 
 .myAccount .right-col h1 {
-  border-bottom: 2.5px solid #404040; }
+  border-bottom: 2.5px solid #404040;
+  color: #dcaa2a;
+  font-family: "Cinzel", serif; }
 
 .myAccount .right-col ul {
   margin: initial; }
@@ -6751,6 +6767,9 @@ a:hover {
 
 .dashboard h1 {
   margin-left: 20px; }
+
+.dashboard a {
+  color: #A98320; }
 
 .push {
   padding: 45px; }
@@ -6812,6 +6831,78 @@ label {
 
 .form-error {
   font-size: .9em; }
+
+.journal-title {
+  font-family: "Cinzel", serif;
+  font-weight: bold;
+  font-size: 2em; }
+
+.journal-thumb {
+  height: 150px;
+  margin: 10px; }
+
+.panel-title {
+  background: #404040;
+  height: 50px;
+  color: white; }
+  .panel-title h6 {
+    position: relative;
+    top: 10px;
+    left: 15px; }
+
+.panel-content {
+  margin: 20px; }
+
+.panel {
+  border: 1px solid rgba(10, 10, 10, 0.25); }
+
+.journal-menu {
+  background: #404040; }
+  .journal-menu a {
+    color: white; }
+  .journal-menu .journal-submenu {
+    background: #f8f8f8; }
+    .journal-menu .journal-submenu a {
+      color: initial; }
+
+.pagination li {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3em; }
+
+.pagination .current {
+  background: #A98320; }
+
+select {
+  height: 2.5em; }
+
+.steps {
+  border-bottom: 1px dotted #404040; }
+
+#checklist {
+  margin-top: 25px;
+  border-bottom: 1px dotted #404040; }
+
+#privacy {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px dotted #404040; }
+
+#guide {
+  margin: 25px 0 25px 0; }
+  #guide ul li {
+    margin-left: 25px; }
+
+.submission-section {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px dotted #404040; }
+
+#label-checkbox2 {
+  font-size: 1em;
+  margin-left: 25px;
+  display: block;
+  padding-left: 20px;
+  text-indent: -20px; }
 
 button.radius, .button.radius {
   border-radius: 3px; }
@@ -6959,6 +7050,9 @@ html, body {
         text-decoration: none;
         color: #dcaa2a; }
 
+.reveal {
+  transition: all 0.25s ease-out; }
+
 .Site-admin #nav {
   background: #1a1919; }
   .Site-admin #nav a:hover {
@@ -7018,7 +7112,8 @@ html, body {
   #directory ul {
     margin-left: 30px; }
   #directory li.active a {
-    color: #dcaa2a; }
+    color: #952d2d;
+    font-weight: bold; }
   #directory a {
     position: relative;
     z-index: 510;

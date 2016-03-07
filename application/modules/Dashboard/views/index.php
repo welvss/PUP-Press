@@ -51,7 +51,7 @@
                 <div class="dashboard">
                  <ul>
                  <?php 
-                  if($ps_id ==5 || $ps_id == 3 || $ps_id ==4)
+                  if($ps_id ==5 || $ps_id == 4 || $ps_id ==3 || $ps_id == 2 || $ps_id == 1)
                   echo 
                     '<li class="user_panel">
                      <h6><a href="#"><strong>Journals</strong></a></h6>
@@ -59,17 +59,9 @@
                    </li>';
                   
                  ?>
-                <?php 
-                 if($ps_id ==3)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Manage Articles</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
-                 
-                ?>
+               
                 <?php
-                  if($ps_id ==5 || $ps_id == 4)
+                  if($ps_id ==5 || $ps_id == 4 || $ps_id == 1 )
                   echo 
                     '<li class="user_panel">
                      <h6><a href="#"><strong>See pay-per-view Purchases</strong></a></h6>
@@ -77,6 +69,45 @@
                    </li>';
                
                  ?>
+               
+                <?php
+                  
+                  if($ps_id ==5 || $ps_id == 4 || $ps_id == 1 )
+                  echo 
+                    '<li class="user_panel">
+                     <h6><a href="#"><strong>Manage Subscription</strong></a></h6>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                   </li>';
+                
+                 ?>
+                <?php 
+                 if($ps_id ==5 || $ps_id == 4 || $ps_id == 1)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Access free sample issues </strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+              
+                ?>
+                <?php
+                  if($ps_id ==5 || $ps_id == 1)
+                  echo 
+                    '<li class="user_panel">
+                     <h6><a href="#"><strong>Apply as Author</strong></a></h6>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                   </li>';
+            
+                 ?>
+
+
+
+
+
+
+
+
+
+
                 <?php 
                  if($ps_id ==4)
                  echo 
@@ -86,71 +117,30 @@
                   </li>';
                  
                 ?>
-                <?php
-                  
-                  if($ps_id ==5 || $ps_id == 4)
-                  echo 
-                    '<li class="user_panel">
-                     <h6><a href="#"><strong>Manage Subscription</strong></a></h6>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                   </li>';
-                
+
+
+
+
+
+
+
+
+                 <?php 
+                 if($ps_id ==3)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Manage Articles</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+                 
                  ?>
-                <?php 
-                 if($ps_id ==5 || $ps_id == 4)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Access free sample issues </strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
+
               
-                ?>
-                <?php
-                  if($ps_id ==5)
-                  echo 
-                    '<li class="user_panel">
-                     <h6><a href="#"><strong>Apply as Author</strong></a></h6>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                   </li>';
-            
-                 ?>
-                
-                <?php 
-                 if($ps_id ==1)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Manage User Accounts</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
-              
-                ?>
-                <?php 
-                 if($ps_id ==1)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Make Announcements</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
-            
-                ?>
-                <?php 
-                 if($ps_id ==1)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Edit Home Page</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
-            
-                ?>
-                <?php 
-                 if($ps_id ==1)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Make Events</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
-           
-                ?>
+
+
+
+
+
                 <?php 
                  if($ps_id ==2)
                  echo 
@@ -161,14 +151,40 @@
            
                 ?>
                 <?php 
-                 if($ps_id ==2)
+                 if($ps_id ==2 || $ps_id == 1)
                  echo 
                    '<li class="user_panel">
-                    <h6><a href="#"><strong>Edit Journals</strong></a></h6>
+                    <h6><a href="#"><strong>Manage Journals</strong></a></h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
                   </li>';
           
                 ?>
+
+
+
+
+
+                <?php 
+                 if($ps_id ==1)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="'.base_url('Administrator').'"><strong>Site Administration</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+              
+                ?>
+                <?php 
+                 if($ps_id ==1)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Manage User Accounts</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+              
+                ?>
+               
+                
+              
 
                 </div>
               </div>

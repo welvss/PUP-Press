@@ -10,3 +10,6 @@ $(document).foundation();
     autoHeight : true,
     transitionStyle:"fade"
   });
+
+    $('#table_id').DataTable();
+    

@@ -43,8 +43,9 @@
         </ul>
     </div>
        </footer>
-  
 
+    <script src="<?php echo ('assets/bower_components/datatables.net/js/jquery.dataTables.min.js');?>"></script>
+    <script src="<?php echo ('assets/bower_components/datatables.net-zf/js/dataTables.foundation.min.js');?>"></script>
     <script src="<?php echo base_url('assets/bower_components/jquery/dist/jquery.js'); ?>"></script>
     <script src="<?php echo base_url('assets/bower_components/what-input/what-input.js'); ?>"></script>
     <script src="<?php echo base_url('assets/bower_components/owlcarousel/owl-carousel/owl.carousel.js'); ?>"></script>
