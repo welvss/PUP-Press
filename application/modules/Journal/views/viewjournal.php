@@ -10,7 +10,9 @@
   </header>
   </div>
 
-    <!--Main Body-->
+    
+
+<!--Main Body-->
     <div id="body-wrapper">
     <div class="push-15"></div>
       <div class="body Journal-homepage">
@@ -38,7 +40,12 @@
             </ul>
             <!--Panel-->
             <div class="panel">
-            <div class="panel-title"> <h6>About the Journal</h6></div>
+            <div class="submission-section">
+              <h5>Under the cave, Sticks and Stones</h5>
+              <p  class="article-author-name" style="float:left">John Gabriel, Super Mega Master in Information Technology.</p>
+              <button class="pdf"><a href="#"><span class="fa fa-file-pdf-o fa-2x"></span>PDF</a></button>
+            </div>
+                <h6>Abstract</h6>
               <p class="panel-content"><?php echo $journal->description;?></p>
               <p class="panel-content">
                 <?php echo $journal->description;?>
@@ -61,8 +68,5 @@
 
 
     </div>
-
-
-
 
     <?php $this->load->view('template/footer'); ?>

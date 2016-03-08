@@ -6845,16 +6845,33 @@ label {
   background: #404040;
   height: 50px;
   color: white; }
-  .panel-title h6 {
-    position: relative;
-    top: 10px;
-    left: 15px; }
 
 .panel-content {
   margin: 20px; }
 
+.article-author-name {
+  position: relative;
+  left: 25px;
+  font-size: .9em; }
+
 .panel {
-  border: 1px solid rgba(10, 10, 10, 0.25); }
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  margin-bottom: 25px; }
+  .panel h6 {
+    position: relative;
+    top: 10px;
+    left: 15px; }
+  .panel h5 {
+    position: relative;
+    top: 5px;
+    left: 20px; }
+
+.pdf {
+  position: relative;
+  left: 200px;
+  bottom: 10px; }
+  .pdf a:hover {
+    color: #800000; }
 
 .journal-menu {
   background: #404040; }
