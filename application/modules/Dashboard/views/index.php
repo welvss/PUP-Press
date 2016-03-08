@@ -1,5 +1,4 @@
-<?php $this->load->view('template/dashboardheader'); ?>
-  <nav id="directory">
+<nav id="directory">
       <ul class="breadcrumbs">
          <li><a href="index.html">PUP Journals</a></li>
          <li class="active"><a href="<?php echo base_url("Dashboard")?>">My Account</a></li>
@@ -60,6 +59,19 @@
                   
                  ?>
                
+                
+                <?php 
+                 if($ps_id ==4||$ps_id ==1)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="'.base_url('Article/ArticleSubmission').'"><strong>Article Submission</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+                 
+                ?>
+
+
+
                 <?php
                   if($ps_id ==5 || $ps_id == 4 || $ps_id == 1 )
                   echo 
@@ -70,6 +82,7 @@
                
                  ?>
                
+              
                 <?php
                   
                   if($ps_id ==5 || $ps_id == 4 || $ps_id == 1 )
@@ -79,6 +92,15 @@
                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
                    </li>';
                 
+                 ?>
+                   <?php 
+                 if($ps_id ==3)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="#"><strong>Manage Journal</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+                 
                  ?>
                 <?php 
                  if($ps_id ==5 || $ps_id == 4 || $ps_id == 1)
@@ -98,68 +120,6 @@
                    </li>';
             
                  ?>
-
-
-
-
-
-
-
-
-
-
-                <?php 
-                 if($ps_id ==4)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Article Submission</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
-                 
-                ?>
-
-
-
-
-
-
-
-
-                 <?php 
-                 if($ps_id ==3)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Manage Articles</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
-                 
-                 ?>
-
-              
-
-
-
-
-
-                <?php 
-                 if($ps_id ==2)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Publish Journals</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
-           
-                ?>
-                <?php 
-                 if($ps_id ==2 || $ps_id == 1)
-                 echo 
-                   '<li class="user_panel">
-                    <h6><a href="#"><strong>Manage Journals</strong></a></h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
-                  </li>';
-          
-                ?>
-
 
 
 
@@ -193,6 +153,12 @@
     </div>
     <div class="push"></div>
   </div>
+
+
+
+
+
+
 
 
     </div>

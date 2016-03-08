@@ -8,13 +8,11 @@ class Dashboard extends MX_Controller
     {
         parent::__construct();
         $this->is_logged_in();
-    }
-
-	public function index() 	
-    {
         $this->load->model('mdldashboard');
          $data = array(
+            'header' => '',
             'title' =>$this->mdldashboard->user_title(),
+            'username' =>$this->mdldashboard->user_name(),
             'lastname' =>$this->mdldashboard->user_lastname(),
             'firstname' =>$this->mdldashboard->user_firstname(),
             'middlename' =>$this->mdldashboard->user_middlename(),
@@ -22,8 +20,15 @@ class Dashboard extends MX_Controller
             'img' => $this->mdldashboard->user_img(),
             'color' => $this->mdldashboard->user_color()
          ); 
+        $this->load->view('template/dashboardheader',$data);
+    }
+
+	public function index() 	
+    {
         
-	    $this->load->view('index',$data);
+        
+        
+	    $this->load->view('index');
 		
 	}
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polytechnic University of the Philippines | Journal</title>
+    <title><?php echo $header." "?>Polytechnic University of the Philippines | Journal</title>
     <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets/favicon.ico'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/app.css'); ?>">
   </head>
@@ -29,7 +29,7 @@
          <div id="login-nav">
             <ul class="ulnav breadcrumbs">
                <li><a href="Sign-in.html">View Basket</a></li>
-              <li><a href="#">Logged in as: <?php echo $this->mdldashboard->user_name();?></a></li>
+              <li><a href="#">Logged in as: <?php echo $username;?></a></li>
             </ul>
           </div>
         </div>
@@ -46,7 +46,7 @@
     </nav>
     <nav id="nav2">
         <ul class="nav">
-            <li><span><?php echo $this->mdldashboard->user_firstname()." ".$this->mdldashboard->user_lastname();?></span></li>
+            <li><span><?php echo $firstname." ".$lastname;?></span></li>
             <li><a href="<?php echo base_url("Dashboard/ChangePass")?>">Change Password</a></li>
             <li><a href="<?php echo base_url("Dashboard/Edit")?>">View/Change User Information</a></li>
             <li><a href="<?php echo base_url("Dashboard/Logout")?>">Sign Out</a></li>

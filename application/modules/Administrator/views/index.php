@@ -1,4 +1,4 @@
-<?php $this->load->view('template/adminheader'); ?>
+
     <nav id="directory">
       <ul class="breadcrumbs">
          <li><a href="index.html">PUP Journals</a></li>
