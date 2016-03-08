@@ -30,7 +30,7 @@ class Article extends MX_Controller
     }
     public function NewSubmission()
     {
-        $this->load->view('NewSubmission');
+        $this->load->view('NewArticle');
     }
     public function UploadSubmission()
     {
