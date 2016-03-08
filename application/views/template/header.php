@@ -35,7 +35,7 @@
             <!--Subject Navigation-->
    <nav id="nav">
         <ul class="nav">
-            <li><a href="#">Journal A-Z</a></li>
+            <li><a href="<?php echo base_url('Journal/AtoZ');?>">Journal A-Z</a></li>
             <li><a href="#">Arts & Humanities</a></li>
             <li><a href="#">Law</a></li>
             <li><a href="#">Medicine & Health</a></li>

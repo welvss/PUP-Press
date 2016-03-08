@@ -143,7 +143,7 @@ class Home extends MX_Controller {
                     'Affiliation' => $_POST['Affiliation'],
                     'Fax' => $_POST['Fax'],
                     'ContactNumber' => $_POST['ContactNumber'],
-                    'color' => $rand[rand(1,4)]
+                    'color' => $rand[rand(1,3)]
                      );
                     if($this->mdlusers->Register($user))
                         redirect('Home/Signin');

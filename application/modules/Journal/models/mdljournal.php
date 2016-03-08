@@ -1,13 +1,18 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-
-
-class MdlAdmin extends CI_Model{
+class mdljournal extends CI_Model{
     
   //User Info
 
-    public function user_color()
+    public function user_privilege()
+    {
+        $this->db->select('p.description');
+        $this->db->from('tbl_privilege');
+        $this->db->join('tbl_users u', 'p.ps_id=u.ps_id');
+        $this->db->where('u.users_id', $this->seesion->userdata('users_id'));
+
+    }
+     public function user_color()
     {
         $this->db->where('users_id', $this->session->userdata('users_id'));
         $query = $this->db->get('tbl_users');
@@ -174,47 +179,18 @@ class MdlAdmin extends CI_Model{
 // User Info end
 
 
-    public function createjournal($options=array())
+    public function getA($data = array())
     {
-
-        $this->db->insert('tbl_journal', $options);   
-        return $this->db->insert_id();
-
-    }
-    public function check_if_title_exists($title)
-    {
-        $this->db->where('journal_title',$title);
-        $result = $this->db->get('tbl_journal');
-        if($result->num_rows()>0)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
-    public function check_if_path_exists($path)
-    {
-        $this->db->where('path',$path);
-        $result = $this->db->get('tbl_journal');
-        if($result->num_rows()>0)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
-    public function get($data = array())
-    {
-
-       
         
+        if(isset($options['path']))
+            $this->db->where('path', $options['path']);
+         if(isset($options['journal_title']))
+            $this->db->where('journal_title', $options['journal_title']);
+         if(isset($options['description']))
+            $this->db->where('description', $options['description']);
         if(isset($options['sort_by']) && $options['sort_by'] != '' && isset($options['sort_direction']))
             $this->db->order_by($options['sort_by'], $options['sort_direction']);
-        
+ 
         $query = $this->db->get("tbl_journal");
         
         if(isset($options['count']))
@@ -225,14 +201,27 @@ class MdlAdmin extends CI_Model{
         //die($this->db->last_query());
         return $query->result();
     }
-
-
-    function deletejournal($journal_id)
+    public function get($options = array())
     {
-        $this->db->where('journal_id', $journal_id);
-        $this->db->delete('tbl_journal'); 
-        return true;
+        
+        if(isset($options['path']))
+            $this->db->where('path', $options['path']);
+         if(isset($options['journal_title']))
+            $this->db->where('journal_title', $options['journal_title']);
+         if(isset($options['description']))
+            $this->db->where('description', $options['description']);
+        if(isset($options['sort_by']) && $options['sort_by'] != '' && isset($options['sort_direction']))
+            $this->db->order_by($options['sort_by'], $options['sort_direction']);
+ 
+        $query = $this->db->get("tbl_journal");
+        
+        if(isset($options['count']))
+            return $query->num_rows();
+        
+        if(isset($options['path']))
+            return $query->row(0);
+        //die($this->db->last_query());
+        return $query->result();
     }
 
-    
 }

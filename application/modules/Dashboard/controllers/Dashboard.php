@@ -32,7 +32,7 @@ class Dashboard extends MX_Controller
 		
 	}
 
- 
+    
     public function update_if()
     {   
 
@@ -258,6 +258,11 @@ class Dashboard extends MX_Controller
                 $this->form_validation->set_message('validate_credentials','Incorrect Password!');
                 return false;
             }
+    }
+
+    public function atoz()
+    {
+        $this->load->view('atoz');
     }
 
 

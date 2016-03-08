@@ -1,6 +1,6 @@
 <nav id="directory">
       <ul class="breadcrumbs">
-         <li><a href="index.html">PUP Journals</a></li>
+         <li><a href="<?php echo base_url('Journal/AtoZ')?>">PUP Journals</a></li>
          <li class="active"><a href="<?php echo base_url("Dashboard")?>">My Account</a></li>
       </ul>
       <hr>

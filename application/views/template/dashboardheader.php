@@ -36,7 +36,7 @@
             <!--Subject Navigation-->
    <nav id="nav">
         <ul class="nav">
-            <li><a href="#">Our Journals</a></li>
+            <li><a href="<?php echo base_url('Journal/AtoZ');?>">Our Journals</a></li>
             <li><a href="#">Access & Purchase</a></li>
             <li><a href="#">For Authors</a></li>
             <li><a href="#">For Librarians</a></li>
