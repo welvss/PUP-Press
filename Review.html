@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Account | Polytechnic University of the Philippines | Journal</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+     <link rel="stylesheet" href="bower_components/datatables.net-zf/css/dataTables.foundation.css">
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body class="homepage">
@@ -57,7 +58,9 @@
       <ul class="breadcrumbs">
          <li><a href="index.html">PUP Journals</a></li>
          <li><a href="MyAccount.html">My Account</a></li>
-         <li class="active"><a href="#">Article Submission</a></li>
+         <li><a href="#">Reviewer</a></li>
+         <li><a href="#">#420</a></li>
+         <li class="active"><a href="#">Review</a></li>
       </ul>
       <hr>
     </nav>
@@ -72,24 +75,96 @@
         <div class="row">
           <div class="small-12 columns">
             <div class="right-col">
-              <h1><strong>Article Submission</strong></h1>
-                <div class="dashboard">
-                  <ul>
-                    <li>
-                      <h6><a href="#"><strong>Coron's Treasure</strong></a></h6>
-                      <table>
-                        <thead>
-                          <tr>
-                            <th><a href="#">Author</a></th>
-                            <th style="position: relative; left: 150px;">1&nbsp; &nbsp; <a href="ActiveSubmission.html">Active</a></th>
-                            <th style="float: right;"><a href="Article-NewSubmission.html">New Submission</a></th>
-                          </tr>
-                        </thead>
-                      </table>
-                    </li>
-                  </ul>
+              <div class="submission-section">
+                <h1><strong>#420 Review</strong></h1>
+                <h5>Submission to be reviewed.</h5>
+                <div class="row">
+                  <div class="small-12 columns">
+                    <div class="row">
+                      <div class="small-2 columns">
+                        <p><strong>Title</strong></p>
+                      </div>
+
+                      <div class="small-10 columns">
+                        <p>Palawan Escapade</p>
+                      </div>
+
+                    </div>
+
+                     <div class="row">
+                      <div class="small-2 columns">
+                        <p><strong>Abstract</strong></p>
+                      </div>
+
+                      <div class="small-10 columns">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sollicitudin et est ut luctus. Maecenas porta leo at ullamcorper convallis. Donec maximus scelerisque quam id commodo. Nunc non vulputate eros. Proin eu bibendum nulla. Nam eu posuere massa. Mauris sollicitudin augue nulla, vel tincidunt est tristique in. Praesent quis egestas ligula, a semper nisi. Suspendisse efficitur, augue in elementum ullamcorper, nibh lorem auctor risus, sed congue lorem eros eget risus. Vivamus pulvinar, nibh nec interdum posuere, lorem libero aliquam ipsum, in molestie orci justo a nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
               </div>
+              <!--Review Sched-->
+              <div class="submission-section">
+                <h5>Review Schedule</h5>
+                <div class="row">
+                  <div class="small-2 columns">
+                    <p><strong>Review Request</strong></p>
+                  </div>
+                  <div class="small-10 columns">
+                    <p>2016-01-15</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="small-2 columns">
+                    <p><strong>Review Due</strong></p>
+                  </div>
+                  <div class="small-10 columns">
+                    <p>2016-03-15</p>
+                  </div>
+                </div>
+              </div>
+              <!--Review-->
+              <div class="submission-section">
+              <h5>Review</h5>
+                <form>
+                    <div class="row">
+                      <div class="small-2 columns">
+                        <label for="right-label" class="float-left "><strong>Subject</strong></label>
+                      </div>
+                      <div class="small-4 columns end">
+                        <input type="text" id="rig-label" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="small-2 columns">
+                        <label for="right-label" class="float-left "><strong>Review</strong></label>
+                      </div>
+                      <div class="small-10 columns end">
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                      </div>
+                    </div>
+                </form>
+                <p style="margin-top: 25px;">Select a recommendation and submit the review to complete the process. You must enter a review or upload a file before selecting a recommendation.</p>
+                <div class="row">
+                  <div class="small-5 columns">
+                    <p><strong>Recommendation</strong></p>
+                  </div>
+                  <div class="small-4 columns end">
+                    <select class="selector">
+                    <option value="" disabled selected> - Please Select -</option>
+                      <option value="AS">Accept Submission</option>
+                      <option value="RR">Revision Required</option>
+                      <option value="DS">Decline Submission</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+                <button href="#" class="btn -yellow" type="submit" value="Submit"><strong>Submit</strong></button>
+
+            </div>
+
           </div>
       </div>
     </div>
@@ -149,6 +224,8 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/what-input.js"></script>
     <script src="bower_components/owlcarousel/owl-carousel/owl.carousel.js"></script>
+     <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables.net-zf/js/dataTables.foundation.min.js"></script>
     <script src="bower_components/foundation-sites/dist/foundation.js"></script>
     <script src="js/app.js"></script>
   </body>

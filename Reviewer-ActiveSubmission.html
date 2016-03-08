@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Account | Polytechnic University of the Philippines | Journal</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+     <link rel="stylesheet" href="bower_components/datatables.net-zf/css/dataTables.foundation.css">
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body class="homepage">
@@ -57,7 +58,8 @@
       <ul class="breadcrumbs">
          <li><a href="index.html">PUP Journals</a></li>
          <li><a href="MyAccount.html">My Account</a></li>
-         <li class="active"><a href="#">Article Submission</a></li>
+         <li><a href="#">Reviewer</a></li>
+         <li class="active"><a href="#">Active Submission</a></li>
       </ul>
       <hr>
     </nav>
@@ -72,24 +74,30 @@
         <div class="row">
           <div class="small-12 columns">
             <div class="right-col">
-              <h1><strong>Article Submission</strong></h1>
-                <div class="dashboard">
-                  <ul>
-                    <li>
-                      <h6><a href="#"><strong>Coron's Treasure</strong></a></h6>
-                      <table>
-                        <thead>
-                          <tr>
-                            <th><a href="#">Author</a></th>
-                            <th style="position: relative; left: 150px;">1&nbsp; &nbsp; <a href="ActiveSubmission.html">Active</a></th>
-                            <th style="float: right;"><a href="Article-NewSubmission.html">New Submission</a></th>
-                          </tr>
-                        </thead>
-                      </table>
-                    </li>
-                  </ul>
-                </div>
+              <h1><strong>Active Submissions</strong></h1>
+                <ul class="menu">
+                  <li><strong>Active</strong></li>
+                </ul>
+                       <table id="table_id"  class="display hover">
+                    <thead>
+                      <tr>
+                        <th >ID</th>
+                        <th >MM-DD-YY</th>
+                        <th> Title</th>
+                        <th >Due</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>420</td>
+                        <td>3-15-16</td>
+                        <td><a href="#">Palawan Escapade</a></td>
+                        <td>04-01-16</td>
+                      </tr>
+                    </tbody>
+                  </table>
               </div>
+
           </div>
       </div>
     </div>
@@ -149,6 +157,8 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/what-input/what-input.js"></script>
     <script src="bower_components/owlcarousel/owl-carousel/owl.carousel.js"></script>
+     <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables.net-zf/js/dataTables.foundation.min.js"></script>
     <script src="bower_components/foundation-sites/dist/foundation.js"></script>
     <script src="js/app.js"></script>
   </body>
