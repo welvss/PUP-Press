@@ -178,6 +178,87 @@ class mdlarticle extends CI_Model
     }
 
 // User Info end
+    public function getA($data = array())
+    {
+        
+        if(isset($options['path']))
+            $this->db->where('path', $options['path']);
+         if(isset($options['journal_title']))
+            $this->db->where('journal_title', $options['journal_title']);
+         if(isset($options['description']))
+            $this->db->where('description', $options['description']);
+        if(isset($options['sort_by']) && $options['sort_by'] != '' && isset($options['sort_direction']))
+            $this->db->order_by($options['sort_by'], $options['sort_direction']);
+ 
+        $query = $this->db->get("tbl_journal");
+        
+        if(isset($options['count']))
+            return $query->num_rows();
+        
+        if(isset($options['journal_id']))
+            return $query->row(0);
+        //die($this->db->last_query());
+        return $query->result();
+    }
+    public function get($options = array())
+    {
+        
+        if(isset($options['path']))
+            $this->db->where('path', $options['path']);
+         if(isset($options['journal_title']))
+            $this->db->where('journal_title', $options['journal_title']);
+         if(isset($options['description']))
+            $this->db->where('description', $options['description']);
+        if(isset($options['sort_by']) && $options['sort_by'] != '' && isset($options['sort_direction']))
+            $this->db->order_by($options['sort_by'], $options['sort_direction']);
+ 
+        $query = $this->db->get("tbl_journal");
+        
+        if(isset($options['count']))
+            return $query->num_rows();
+        
+        if(isset($options['journal_id']))
+            return $query->row(0);
+        //die($this->db->last_query());
+        return $query->result();
+    }
 
+    public function createarticle($options=array())
+    {
+
+        $this->db->insert('tbl_article', $options);   
+        return $this->db->insert_id();
+
+    }
+     public function review($options=array())
+    {
+
+        $this->db->insert('tbl_review', $options); 
+        return $this->db->insert_id();
+ 
+    
+    }
+    public function getArticle($options = array())
+    {
+        
+        
+         if(isset($options['article_title']))
+            $this->db->where('article_title', $options['article_title']);
+         if(isset($options['abstract']))
+            $this->db->where('abstract', $options['abstract']);
+        if(isset($options['sort_by']) && $options['sort_by'] != '' && isset($options['sort_direction']))
+            $this->db->order_by($options['sort_by'], $options['sort_direction']);
+       
+        $this->db->where('pending',true);
+        $query = $this->db->get("tbl_article");
+        
+        if(isset($options['count']))
+            return $query->num_rows();
+        
+        if(isset($options['article_id']))
+            return $query->row(0);
+        //die($this->db->last_query());
+        return $query->result();
+    }
 
 }

@@ -53,7 +53,8 @@ class Journal extends MX_Controller
       
         
         $data['journal'] = $this->mdljournal->get(array('path'=>$this->uri->segment(3)));   
-
+        $data['article'] = $this->mdljournal->getArticle(array()); 
+        
         $this->load->view('viewjournal',$data);
         
     }

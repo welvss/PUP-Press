@@ -17,20 +17,35 @@
         <div class="row">
           <div class="small-12 columns">
             <div class="right-col">
+
               <h1><strong>Article Submission</strong></h1>
                 <div class="dashboard">
                   <ul>
                     <li>
-                      <h6><a href="#"><strong>Coron's Treasure</strong></a></h6>
-                      <table>
-                        <thead>
-                          <tr>
-                            <th><a href="#">Author</a></th>
-                            <th style="position: relative; left: 150px;">1&nbsp; &nbsp; <a href="ActiveSubmission.html">Active</a></th>
-                            <th style="float: right;"><a href="<?php echo base_url("Article/NewSubmission")?>">New Submission</a></th>
-                          </tr>
-                        </thead>
-                      </table>
+                      
+                      <?php
+                      if(isset($A) && is_array($A) && count($A) > 0)
+                      {
+                          foreach ($A as $As)
+                          {
+                            echo
+                            '<h6><a href="#"><strong>'.$As->journal_title.'</strong></a></h6>
+                             <table>
+                                  <thead>
+                                      <tr>
+                                          <th><a href="#">Author</a></th>
+                                          <th style="position: relative; left: 150px;">1&nbsp; &nbsp; <a href="ActiveSubmission.html">Active</a></th>
+                                          <th style="float: right;"><a href="'.  base_url("Article/NewSubmission").'/'.$As->journal_id.'">New Submission</a></th>
+                                      </tr>
+                                  </thead>
+                            </table>';
+                               
+                          }
+                      }
+                      ?>
+                     
+                       
+                     
                     </li>
                   </ul>
                 </div>

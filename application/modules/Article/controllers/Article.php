@@ -26,24 +26,15 @@ class Article extends MX_Controller
 
     public function ArticleSubmission()
     {
-        $this->load->view('ArticleSubmission');
+        $data['A'] = $this->mdlarticle->getA(array('sort_by'=>'journal_title','sort_direction'=>'DESC'));
+        $this->load->view('ArticleSubmission',$data);
     }
     public function NewSubmission()
     {
-        $this->load->view('NewArticle');
+        $data['journal'] = $this->mdlarticle->get(array('journal_id'=>$this->uri->segment(3)));   
+        $this->load->view('NewArticle',$data);
     }
-    public function UploadSubmission()
-    {
-        $this->load->view('NewSubmission2');
-    }
-    public function EnterMetadata()
-    {
-        $this->load->view('NewSubmission3');
-    }
-     public function Confirmation()
-    {
-        $this->load->view('NewSubmission4');
-    }
+   
     
     function is_logged_in()
     {
@@ -53,6 +44,86 @@ class Article extends MX_Controller
             redirect('Home/Signin');
         }
     }
-   
+    public function createarticle()
+    {
+        
+        $this->load->model('mdlarticle');
+        if($this->input->post('submit'))
+        { 
+            
+            $data = array( 
+                'article_title' => $_POST['article_title'],
+                'abstract' => $_POST['abstract'],
+                'journal_id' => $_POST['journal_id'],
+                'users_id' => $this->session->userdata('users_id'),
+                'file' => $this->do_upload()
+            );
+            if($this->mdlarticle->createarticle($data))
+            redirect('Article/ArticleSubmission');
+        }
+                               
+                    
+        else
+       redirect('Article/ArticleSubmission');
+        
+
+    }
+     public function do_upload()
+    {
+       
+
+        $type = explode('.', $_FILES["file"]["name"]);
+        $type = $type[count($type)-1];
+        $url = "./articles/".uniqid(rand()).'.'.$type;
+        if (in_array($type, array("PDF","pdf"))) 
+        {
+           if (is_uploaded_file($_FILES["file"]["tmp_name"])) 
+           {
+               if (move_uploaded_file($_FILES["file"]["tmp_name"], $url)) 
+               {
+                   return $url;
+               }
+           }
+        }
+        return "";
+    }
+    public function ReviewArticle()
+    {
+        $data['Article'] = $this->mdlarticle->getArticle(array('sort_by'=>'article_title','sort_direction'=>'ASC'));
+        $this->load->view('activearticle',$data);
+    }
+    public function Review()
+    {
+        $data['article'] = $this->mdlarticle->getArticle(array('article_id'=>$this->uri->segment(3)));   
+        $this->load->view('review',$data);
+    }
+    public function reviewer()
+    {
+        
+        $this->load->model('mdlarticle');
+        if($this->input->post('submit'))
+        { 
+            
+            $data = array( 
+                'article_id' => $_POST['article_id'],
+                'subject' => $_POST['subject'],
+                'review' => $_POST['review'],
+                'journal_id' => $_POST['journal_id'],
+                'users_id' => $this->session->userdata('users_id'),
+                'pending' =>$_POST['pending']
+                
+            );
+            $id['id'] = $_POST['article_id'];
+            
+            if($this->mdlarticle->review($data))
+            redirect('Article/ReviewArticle');
+        }
+                               
+                    
+        else
+       redirect('Article/ReviewArticle');
+        
+
+    }
 
 }

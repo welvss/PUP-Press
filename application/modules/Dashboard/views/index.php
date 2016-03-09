@@ -122,7 +122,15 @@
                  ?>
 
 
-
+                 <?php 
+                 if($ps_id ==1)
+                 echo 
+                   '<li class="user_panel">
+                    <h6><a href="'.base_url('Article/ReviewArticle').'"><strong>Review Articles</strong></a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti eos minima, quam cupiditate reiciendis nihil libero voluptatum possimus eum voluptas.</p>
+                  </li>';
+              
+                ?>
 
                 <?php 
                  if($ps_id ==1)

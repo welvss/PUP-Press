@@ -212,13 +212,35 @@ class mdljournal extends CI_Model{
             $this->db->where('description', $options['description']);
         if(isset($options['sort_by']) && $options['sort_by'] != '' && isset($options['sort_direction']))
             $this->db->order_by($options['sort_by'], $options['sort_direction']);
- 
+        
         $query = $this->db->get("tbl_journal");
         
         if(isset($options['count']))
             return $query->num_rows();
         
         if(isset($options['path']))
+            return $query->row(0);
+        //die($this->db->last_query());
+        return $query->result();
+    }
+      public function getArticle($options = array())
+    {
+        
+        
+         if(isset($options['article_title']))
+            $this->db->where('article_title', $options['article_title']);
+         if(isset($options['abstract']))
+            $this->db->where('abstract', $options['abstract']);
+        if(isset($options['sort_by']) && $options['sort_by'] != '' && isset($options['sort_direction']))
+            $this->db->order_by($options['sort_by'], $options['sort_direction']);
+       
+        $this->db->where('journal_id',$this->uri->segment(3));
+        $query = $this->db->get("tbl_article");
+        
+        if(isset($options['count']))
+            return $query->num_rows();
+        
+        if(isset($options['article_id']))
             return $query->row(0);
         //die($this->db->last_query());
         return $query->result();
